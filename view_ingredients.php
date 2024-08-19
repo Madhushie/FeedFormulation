@@ -57,9 +57,9 @@ $data = [
         <table class="table custom-table" id="ingredientsTable">
             <thead>
                 <tr>
-                    <th class="p-3" scope="col"><input class="form-check-input" type="checkbox" value="" id="selectAllCheckbox"></th>
-                    <th class="p-3" scope="col">Code</th>
-                    <th class="p-3" scope="col">Name</th>
+                    <th class="p-3" scope="col"><br/><input class="form-check-input" type="checkbox" value="" id="selectAllCheckbox"></th>
+                    <th class="p-3 align-middle" scope="col">Code</th>
+                    <th class="p-3 align-middle" scope="col">Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,7 +78,7 @@ $data = [
                 <thead>
                     <tr>
                         <?php for($i = 2; $i < count($data[0]); $i++): ?>
-                            <th class="p-3 text-nowrap" scope="col"><?php echo $data[0][$i]; ?></th>
+                            <th class="p-3 align-middle" scope="col"><?php echo $data[0][$i]; ?></th>
                         <?php endfor; ?>
                     </tr>
                 </thead>
@@ -94,20 +94,6 @@ $data = [
             </table>
         </div>
     </div>
-
-    <!-- Pagination Controls
-    <nav>
-        <ul class="pagination justify-content-center" id="pagination-controls">
-            <li class="page-item disabled" id="prev-page">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            Page numbers will be dynamically inserted here 
-            <li class="page-item" id="next-page">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
-    -->
 </div>
 
 <!-- Modal -->
@@ -127,80 +113,3 @@ $data = [
 </div>
 
 <?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
-
-<!--
-<script>
-    // JavaScript for Pagination
-    const rowsPerPage = 5;
-    const table1 = document.getElementById("ingredientsTable");
-    const table2 = document.getElementById("overflowTable");
-
-    const rows1 = table1.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
-    const rows2 = table2.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
-
-    const rowCount = rows1.length; // Assuming both tables have the same number of rows
-    const pageCount = Math.ceil(rowCount / rowsPerPage);
-    let currentPage = 1;
-
-    // Function to display the current page
-    function displayPage(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-        
-        for (let i = 0; i < rowCount; i++) {
-            const display = i >= start && i < end ? "" : "none";
-            rows1[i].style.display = display;
-            rows2[i].style.display = display;
-        }
-
-        document.getElementById("prev-page").classList.toggle("disabled", page === 1);
-        document.getElementById("next-page").classList.toggle("disabled", page === pageCount);
-    }
-
-    // Function to generate pagination controls
-    function generatePagination() {
-        const paginationControls = document.getElementById("pagination-controls");
-        for (let i = 1; i <= pageCount; i++) {
-            const pageItem = document.createElement("li");
-            pageItem.className = "page-item" + (i === 1 ? " active" : "");
-            pageItem.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-            pageItem.addEventListener("click", function(event) {
-                event.preventDefault();
-                currentPage = i;
-                displayPage(currentPage);
-                updatePaginationControls();
-            });
-            paginationControls.insertBefore(pageItem, document.getElementById("next-page"));
-        }
-    }
-
-    // Function to update pagination controls
-    function updatePaginationControls() {
-        const paginationItems = document.querySelectorAll("#pagination-controls .page-item");
-        paginationItems.forEach(item => item.classList.remove("active"));
-        paginationItems[currentPage].classList.add("active");
-    }
-
-    // Event listeners for Previous and Next buttons
-    document.getElementById("prev-page").addEventListener("click", function() {
-        if (currentPage > 1) {
-            currentPage--;
-            displayPage(currentPage);
-            updatePaginationControls();
-        }
-    });
-
-    document.getElementById("next-page").addEventListener("click", function() {
-        if (currentPage < pageCount) {
-            currentPage++;
-            displayPage(currentPage);
-            updatePaginationControls();
-        }
-    });
-
-    // Initialize pagination
-    generatePagination();
-    displayPage(currentPage);
-</script>
-
--->
