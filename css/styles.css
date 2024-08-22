@@ -1,0 +1,18 @@
+body {
+    background-color: #f4f4f4;
+}
+
+header .navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table-responsive {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+}
