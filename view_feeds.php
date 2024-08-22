@@ -7,27 +7,11 @@ if (!securePage($_SERVER['PHP_SELF'])) {
 ?>
 
 <head>
-    <link rel="stylesheet" href="path/to/your/styles.css">
-    <script src="js/getAllFeedHandler.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/getAllFeedsHandler.js"></script>
 </head>
 
 <body>
-    <header class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">LOGO</span>
-            <nav class="navbar-nav d-flex flex-row">
-                <a class="nav-link text-white" href="#">Dashboard</a>
-                <a class="nav-link text-white" href="#">Ingredients</a>
-                <a class="nav-link text-white active" href="#">Feeds</a>
-                <a class="nav-link text-white" href="#">Species</a>
-            </nav>
-            <div class="d-flex align-items-center">
-                <span class="text-white me-2">User Name</span>
-                <span class="badge bg-secondary">Admin</span>
-            </div>
-        </div>
-    </header>
-
     <main class="container my-5">
         <h1 class="mb-4">Feeds</h1>
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -68,9 +52,6 @@ if (!securePage($_SERVER['PHP_SELF'])) {
             <button class="btn btn-outline-secondary ms-2">→</button>
         </div>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 
 <?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
