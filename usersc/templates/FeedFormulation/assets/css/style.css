@@ -1,0 +1,10 @@
+/* ==================== View Ingredients Page =============================== */
+.custom-table {
+    box-shadow: 10px 0 5px -2px rgba(0, 20, 0, 0.3);
+    width: 350px;
+    margin-bottom: 32px;
+}
+
+table thead {
+    background-color: rgba(170, 170, 170, 0.1);
+}
