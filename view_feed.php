@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once 'users/init.php';
+require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
+if (!securePage($_SERVER['PHP_SELF'])) {
+    die();
+}
+?>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feeds Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="path/to/your/styles.css">
+    <script src="js/getAllFeedHandler.js"></script>
 </head>
+
 <body>
     <header class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
@@ -68,4 +72,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+
+<?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
